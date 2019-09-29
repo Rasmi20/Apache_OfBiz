@@ -304,7 +304,7 @@
   		<put-attribute name="body" value="/pages/admin/tax/taxRateDetails.jsp" /> 
   	</definition> 
   	
-  	<definition name="admin-cache" template="/layout/admin/layout.jsp">
+  	<definition name="admin-caches" template="/layout/admin/layout.jsp">
   		<put-attribute name="body" value="/pages/admin/configuration/cacheManagement.jsp" /> 
   	</definition>    	
   	
