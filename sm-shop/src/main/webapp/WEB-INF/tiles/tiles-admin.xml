@@ -73,7 +73,7 @@
   		<put-attribute name="body" value="/pages/admin/customers/optionsset.jsp" /> 
   	</definition>
   	
-  	 <definition name="admin-products" template="/layout/admin/layout.jsp">
+  	 <definition name="admin-produts" template="/layout/admin/layout.jsp">
   		<put-attribute name="body" value="/pages/admin/products/products.jsp" /> 
   	</definition>
   	
