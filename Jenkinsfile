@@ -1,3 +1,5 @@
+pipeline {
+agent {
 node('Node02'){
     
     def mvnHome
@@ -74,4 +76,6 @@ node('Node02'){
        ansible-playbook /var/lib/jenkins/pyflow/javatest_prod.yml
        '''
    }
+}
+}
 }
