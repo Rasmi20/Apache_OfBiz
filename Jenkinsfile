@@ -1,8 +1,10 @@
 pipeline {
-    agent node02
+    agent any
     stages {
-        stage ('Clone') {
+        stage('Build') {
             steps {
-                git branch: '2.6.0', url: "https://github.com/Rasmi20/shopizer.git/"
+                sh 'echo "Hello world!"'
             }
         }
+    }
+}
