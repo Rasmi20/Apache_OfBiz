@@ -1,7 +1,6 @@
 pipeline {
     agent  { node { label 'Node02' } }
     stages {
-        def mvnHome
         stage('Code Checkout'){
             steps {
                 sh 'rm -rf /var/lib/jenkins/workspace/Adaptive_Pipeline/shopizer'
