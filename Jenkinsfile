@@ -2,7 +2,7 @@ node('Node02'){
     
     def mvnHome
     stage('Code Checkout'){
-        sh 'rm -rf /var/lib/jenkins/workspace/ mlpipeline_2.6.0'
+        sh 'rm -rf /var/lib/jenkins/workspace/mlpipeline_2.6.0'
 
         sh 'git clone https://github.com/Rasmi20/shopizer.git'
         mvnHome = tool 'M3'
