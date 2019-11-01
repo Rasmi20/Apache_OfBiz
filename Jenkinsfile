@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                source /etc/profile.d/maven.sh
+                mvn clean install
+                
             }
         }
         stage('Test') {
