@@ -5,8 +5,7 @@ node('Node02'){
         sh 'rm -rf /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer'
         sleep(15)
         sh 'git clone https://github.com/Rasmi20/shopizer.git'
-        mvnHome = tool 'M3'
-        
+        mvnHome = tool 'M3'     
     }
     
     stage('Build & Package') {
@@ -53,25 +52,26 @@ node('Node02'){
    }
     stage('Model Integration'){
        
-       //sh '''
-       //python /var/lib/jenkins/testsuite/python/model/input.py
-      // ''' 
-       //sleep(50)
+       sh '''
+       python /var/lib/jenkins/testsuite/python/model/input.py
+       ''' 
+       sleep(50)
        
-       //sh '''
-       //python3 /var/lib/jenkins/testsuite/python/model/API-Final1.py
-       //''' 
-       //sleep(100)
+       sh '''
+       python3 /var/lib/jenkins/testsuite/python/model/API-Final1.py
+       ''' 
+       sleep(100)
    }
    stage('Test'){
-       //sh '''
-       //python /var/lib/jenkins/testsuite/python/run_test.py
-      // '''
-      // sleep(80)
+       sh '''
+       python /var/lib/jenkins/testsuite/python/run_test.py
+       '''
+       sleep(80)
    }  
     stage('Prod deploy'){	
         sh '''	
        ansible-playbook /var/lib/jenkins/pyflow/javatest_prod.yml	
        '''	
    }
+    
   }
