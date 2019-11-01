@@ -3,7 +3,6 @@ package com.salesmanager.shop.model.catalog.manufacturer;
 import java.io.Serializable;
 
 import com.salesmanager.shop.model.entity.Entity;
-//update
 //test
 public class Manufacturer extends Entity implements Serializable {
 
