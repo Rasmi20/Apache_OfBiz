@@ -67,7 +67,7 @@ node('Node02'){
        sh '''
        python /var/lib/jenkins/testsuite/python/run_test.py
        '''
-       sleep(100)
+       sleep(80)
    }  
    
    stage('Prod deploy'){
