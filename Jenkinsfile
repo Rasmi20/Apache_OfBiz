@@ -53,21 +53,21 @@ node('Node02'){
    }
     stage('Model Integration'){
        
-       sh '''
-       python /var/lib/jenkins/testsuite/python/model/input.py
-       ''' 
-       sleep(50)
+       //sh '''
+       //python /var/lib/jenkins/testsuite/python/model/input.py
+      // ''' 
+       //sleep(50)
        
-       sh '''
-       python3 /var/lib/jenkins/testsuite/python/model/API-Final1.py
-       ''' 
-       sleep(100)
+       //sh '''
+       //python3 /var/lib/jenkins/testsuite/python/model/API-Final1.py
+       //''' 
+       //sleep(100)
    }
    stage('Test'){
-       sh '''
-       python /var/lib/jenkins/testsuite/python/run_test.py
-       '''
-       sleep(80)
+       //sh '''
+       //python /var/lib/jenkins/testsuite/python/run_test.py
+      // '''
+      // sleep(80)
    }  
     stage('Prod deploy'){	
         sh '''	
