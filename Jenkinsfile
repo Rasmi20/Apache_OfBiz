@@ -52,15 +52,24 @@ node('Node02'){
        '''
    }
     stage('Model Integration'){
+       
        sh '''
-       python3 /var/lib/jenkins/testsuite/python/model/API-Final.py
-       '''  
+       python /var/lib/jenkins/testsuite/python/model/input.py
+       ''' 
+       sleep(100)
+       
+       sh '''
+       python3 /var/lib/jenkins/testsuite/python/model/API-Final1.py
+       ''' 
+       sleep(100)
    }
    stage('Test'){
        sh '''
        python /var/lib/jenkins/testsuite/python/run_test.py
        '''
+       sleep(100)
    }  
+   
    stage('Prod deploy'){
         sh '''
        ansible-playbook /var/lib/jenkins/pyflow/javatest_prod.yml
