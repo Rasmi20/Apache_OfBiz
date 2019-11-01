@@ -14,7 +14,7 @@ node('Node02'){
         source /etc/profile.d/maven.sh
         
 
-        cd /var/lib/jenkins/workspace/mlpipeline_2.6.0;
+        cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer;
 
         mvn clean install
       '''
@@ -23,18 +23,18 @@ node('Node02'){
    stage('Static Code Analysis'){
        sh '''
        source /etc/profile.d/maven.sh
-       cd /var/lib/jenkins/workspace/mlpipeline_2.6.0;
+       cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer;
        mvn clean verify sonar:sonar
        '''
    }
    
     stage('Binary Store'){
        sh '''
-       curl -u admin:admin -T /var/lib/jenkins/workspace/mlpipeline_2.6.0/sm-shop/target/ROOT.war "http://10.134.95.194:8081/artifactory/generic-local/var/lib/jenkins/workspace/java_app/sm-shop/target/ROOT.war"
+       curl -u admin:admin -T /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer/sm-shop/target/ROOT.war "http://10.134.95.194:8081/artifactory/generic-local/var/lib/jenkins/workspace/java_app/sm-shop/target/ROOT.war"
    '''
    }
     stage('Containerize'){
-       sh ''' cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/sm-shop;
+       sh ''' cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer/sm-shop;
        docker build . -t rasmi20/assignment:demo1 '''
    }
    
