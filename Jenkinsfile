@@ -56,7 +56,7 @@ node('Node02'){
        sh '''
        python /var/lib/jenkins/testsuite/python/model/input.py
        ''' 
-       sleep(100)
+       sleep(50)
        
        sh '''
        python3 /var/lib/jenkins/testsuite/python/model/API-Final1.py
