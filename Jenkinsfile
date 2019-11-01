@@ -70,9 +70,4 @@ node('Node02'){
        sleep(80)
    }  
    
-   stage('Prod deploy'){
-        sh '''
-       ansible-playbook /var/lib/jenkins/pyflow/javatest_prod.yml
-       '''
    }
-}
