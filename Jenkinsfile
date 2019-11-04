@@ -23,5 +23,6 @@ node('Node02'){
        mvn clean verify sonar:sonar
        '''
    }
+}
    
     
