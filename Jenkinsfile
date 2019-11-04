@@ -10,7 +10,7 @@ node('Node02'){
     
     stage('Build & Package') {
         sh ''' 
-       
+        cd shopizer
         mvn clean install
       '''
    }
