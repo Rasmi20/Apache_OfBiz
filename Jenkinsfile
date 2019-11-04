@@ -12,7 +12,7 @@ node('Node02'){
         source /etc/profile.d/maven.sh
         
 
-        cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer;
+        cd /var/lib/jenkins/workspace/mlpipeline_2.6.0;
 
         mvn clean install
       '''
@@ -21,7 +21,7 @@ node('Node02'){
    stage('Static Code Analysis'){
        sh '''
        source /etc/profile.d/maven.sh
-       cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer;
+       cd /var/lib/jenkins/workspace/mlpipeline_2.6.0;
        mvn clean verify sonar:sonar
        '''
    }
