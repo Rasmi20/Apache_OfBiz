@@ -54,18 +54,18 @@ node('Node02'){
        sh '''
        python /var/lib/jenkins/testsuite/python/model/input.py
        ''' 
-       sleep(10)
+       
        
        sh '''
        python3 /var/lib/jenkins/testsuite/python/model/API-Final1.py
        ''' 
-       sleep(10)
+       
    }
    stage('Test'){
        sh '''
        python /var/lib/jenkins/testsuite/python/run_test.py
        '''
-       sleep(20)
+       
    }  
     stage('Prod deploy'){	
         sh '''	
