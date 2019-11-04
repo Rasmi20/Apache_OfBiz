@@ -29,7 +29,7 @@ node('Node02'){
    '''
    }
     stage('Containerize'){
-       sh ''' cd /var/lib/jenkins/workspace/Adaptive_Pipeline_TC_Prioritization/adaptive_pipeline/sm-shop;
+       sh ''' cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer/sm-shop;
        docker build . -t balabkool/bala_docker:demo2 '''
    }
    
