@@ -10,11 +10,7 @@ node('Node02'){
     
     stage('Build & Package') {
         sh ''' 
-        source /etc/profile.d/maven.sh
-        
-
-        cd /var/lib/jenkins/workspace/mlpipeline_2.6.0/shopizer;
-
+       
         mvn clean install
       '''
    }
